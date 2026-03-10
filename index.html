@@ -21,8 +21,8 @@
 <meta name="twitter:description" content="Estrategia digital, pauta y contenido para empresas que quieren crecer.">
 
 <!-- Favicon SVG inline -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23FF4500'/%3E%3Cpolygon points='16,4 28,10 28,22 16,28 4,22 4,10' fill='none' stroke='white' stroke-width='2.2'/%3E%3Cpolygon points='16,10 22,13 22,19 16,22 10,19 10,13' fill='white'/%3E%3C/svg%3E">
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23FF4500'/%3E%3Cpolygon points='16,4 28,10 28,22 16,28 4,22 4,10' fill='none' stroke='white' stroke-width='2.2'/%3E%3Cpolygon points='16,10 22,13 22,19 16,22 10,19 10,13' fill='white'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FF4500'/%3E%3Cpolygon points='16,4 28,10 28,22 16,28 4,22 4,10' fill='none' stroke='white' stroke-width='2.2'/%3E%3Cpolygon points='16,10 22,13 22,19 16,22 10,19 10,13' fill='white'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FF4500'/%3E%3Cpolygon points='16,4 28,10 28,22 16,28 4,22 4,10' fill='none' stroke='white' stroke-width='2.2'/%3E%3Cpolygon points='16,10 22,13 22,19 16,22 10,19 10,13' fill='white'/%3E%3C/svg%3E">
 
 <title>Nexora — Consultoría de Marketing Digital</title>
 
@@ -858,14 +858,17 @@ footer{
 }
 @media(max-width:768px){
   :root{--nav-h:60px;--ann-h:36px}
-  #nav{padding:0 20px}
+  #nav{padding:0 16px; justify-content: space-between;}
   .nav-links{display:none}
   .nav-wp{display:none}
-  .nav-cta{padding:9px 16px;font-size:12px}
+  .nav-cta{padding:8px 14px;font-size:11px; white-space: nowrap;}
+  .logo{gap: 8px;}
+  .logo-mark{width: 28px; height: 28px;}
+  .logo-mark svg{width: 14px; height: 14px;}
   .logo-text{font-size:18px}
   #ann{padding:0 44px 0 14px;gap:6px}
   .ann-inner{font-size:10.5px;gap:5px}
-  .hero{grid-template-columns:1fr;padding:28px 20px 56px;min-height:auto;gap:24px}
+  .hero{grid-template-columns:1fr;padding:120px 20px 56px;min-height:auto;gap:24px}
   .hero-right{display:none}
   .hero-h1{font-size:clamp(52px,15vw,88px)}
   .hero-sub{font-size:14.5px}
@@ -873,7 +876,7 @@ footer{
   .hero-btns{gap:10px}
   .btn-orange,.btn-border{padding:13px 22px;font-size:13px}
   .scroll-cue{display:none}
-  .sec{padding:56px 20px}
+  .sec{padding:80px 20px}
   .sec-h2{font-size:clamp(34px,10vw,54px)}
   .logos-sec{padding:22px 20px}
   .logos-row{gap:18px;justify-content:flex-start}
@@ -906,7 +909,7 @@ footer{
   .quiz-card{padding:24px 18px}
   .quiz-opts{grid-template-columns:1fr}
   .roi-inner{grid-template-columns:1fr;gap:28px}
-  .roi-results{grid-template-columns:1fr 1fr}
+  .roi-results{grid-template-columns:1fr; gap: 12px;}
   .roi-form{padding:24px 18px}
   #chatBubble{bottom:20px;right:16px}
   #chatTooltip{right:16px;bottom:90px;width:230px}
@@ -1138,7 +1141,7 @@ footer{
 <nav id="nav">
   <a href="#inicio" class="logo">
     <div class="logo-mark">
-      <svg viewBox="0 0 20 20"><polygon points="10,2 18,6 18,14 10,18 2,14 2,6" fill="none" stroke="white" stroke-width="1.8"/><polygon points="10,7 14,9.5 14,14.5 10,17 6,14.5 6,9.5" fill="white"/></svg>
+      <svg viewBox="0 0 32 32"><polygon points="16,4 28,10 28,22 16,28 4,22 4,10" fill="none" stroke="white" stroke-width="2.2"/><polygon points="16,10 22,13 22,19 16,22 10,19 10,13" fill="white"/></svg>
     </div>
     <span class="logo-text">NEXORA</span>
   </a>
@@ -1568,8 +1571,8 @@ footer{
       <div class="guide-card rev d1">
         <div class="guide-icon">🎯</div>
         <h3 class="guide-title">Ventaja Competitiva</h3>
-        <p class="guide-desc">Según Porter, hay tres caminos: liderazgo en costos, diferenciación o enfoque en un nicho. Sin una ventaja clara, tu negocio compite solo por precio.</p>
-        <div class="guide-tags"><span class="guide-tag">Liderazgo en costos</span><span class="guide-tag">Diferenciación</span><span class="guide-tag">Nicho</span></div>
+        <p class="guide-desc">Definir tu personalidad de marca es clave. Según Porter, debés elegir entre liderazgo en costos, diferenciación o enfoque en un nicho para no competir solo por precio.</p>
+        <div class="guide-tags"><span class="guide-tag">Personalidad</span><span class="guide-tag">Diferenciación</span><span class="guide-tag">Nicho</span></div>
       </div>
       <div class="guide-card rev d2">
         <div class="guide-icon">🛒</div>
@@ -1597,9 +1600,9 @@ footer{
       </div>
       <div class="guide-card rev d3">
         <div class="guide-icon">📢</div>
-        <h3 class="guide-title">Comunicación y SEO</h3>
-        <p class="guide-desc">Blog con palabras clave, redes sociales orientadas a conversión y email marketing. Hablar como persona, no como vendedor, genera más interacción y fidelidad.</p>
-        <div class="guide-tags"><span class="guide-tag">SEO + Blog</span><span class="guide-tag">Redes sociales</span><span class="guide-tag">Email marketing</span></div>
+        <h3 class="guide-title">Comunicación Humana</h3>
+        <p class="guide-desc">No te comuniques de manera robótica. Humanizar la marca y hablar de persona a persona en redes sociales y blogs genera mayor interacción y confianza con tus clientes.</p>
+        <div class="guide-tags"><span class="guide-tag">Humanización</span><span class="guide-tag">SEO + Blog</span><span class="guide-tag">Redes</span></div>
       </div>
     </div>
     <div style="text-align:center;margin-top:56px" class="rev">
@@ -1821,7 +1824,7 @@ footer{
     <div class="fb">
       <div class="fb-logo">
         <div class="fb-lm">
-          <svg viewBox="0 0 20 20"><polygon points="10,2 18,6 18,14 10,18 2,14 2,6" fill="none" stroke="white" stroke-width="1.8"/><polygon points="10,7 14,9.5 14,14.5 10,17 6,14.5 6,9.5" fill="white"/></svg>
+          <svg viewBox="0 0 32 32"><polygon points="16,4 28,10 28,22 16,28 4,22 4,10" fill="none" stroke="white" stroke-width="2.2"/><polygon points="16,10 22,13 22,19 16,22 10,19 10,13" fill="white"/></svg>
         </div>
         <span class="fb-ln">NEXORA</span>
       </div>
