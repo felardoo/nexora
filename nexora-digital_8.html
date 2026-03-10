@@ -14,8 +14,9 @@
 <meta property="og:title" content="Nexora — Consultoría de Marketing Digital">
 <meta property="og:description" content="Ayudamos a empresas argentinas a vender más con estrategia digital, pauta y contenido.">
 
-<!-- Favicon SVG - UNIFICADO -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FF4500'/%3E%3Cpath d='M16 7L6 12v8l10 5 10-5v-8L16 7zm0 2.5l7.5 3.75v5.5L16 22.5l-7.5-3.75v-5.5L16 9.5z' fill='white'/%3E%3C/svg%3E">
+<!-- FAVICON & LOGO UNIFICADOS - MISMO DISEÑO SVG EN TODOS LADOS -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF4500;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FF6B35;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='40' height='40' rx='10' fill='url(%23grad1)'/%3E%3Cpath d='M20 8L8 14v12l12 6 12-6V14L20 8zm0 3l8 4v8l-8 4-8-4v-8l8-4z' fill='white' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF4500;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FF6B35;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='40' height='40' rx='10' fill='url(%23grad1)'/%3E%3Cpath d='M20 8L8 14v12l12 6 12-6V14L20 8zm0 3l8 4v8l-8 4-8-4v-8l8-4z' fill='white' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E">
 
 <title>Nexora — Consultoría de Marketing Digital</title>
 
@@ -23,16 +24,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
 
 <style>
-/* CSS Mantenido de la versión anterior para asegurar responsividad y estilo unificado */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --blk:#080808; --dk:#0F0F0F; --mid:#161616; --sur:#1E1E1E; --sur2:#242424;
-  --w:#FFFFFF; --off:#F5F3EF;
-  --or:#FF4500; --or2:#FF6B35; --or-dim:rgba(255,69,0,.1); --or-glow:rgba(255,69,0,.2);
-  --green:#22C55E; --yellow:#FACC15; --red:#F87171;
-  --gr:#888; --gr2:#555; --gr3:#333;
-  --bd:rgba(255,255,255,.07); --bd2:rgba(255,255,255,.13); --bd3:rgba(255,255,255,.2);
-  --t1:rgba(255,255,255,.92); --t2:rgba(255,255,255,.52); --t3:rgba(255,255,255,.28); --t4:rgba(255,255,255,.12);
+  --blk:#080808; --dk:#0F0F0F; --mid:#161616; --sur:#1E1E1E;
+  --w:#FFFFFF; --or:#FF4500; --or2:#FF6B35;
+  --or-dim:rgba(255,69,0,.1); --or-glow:rgba(255,69,0,.2);
+  --bd:rgba(255,255,255,.07); --bd3:rgba(255,255,255,.2);
+  --t1:rgba(255,255,255,.92); --t2:rgba(255,255,255,.52); --t3:rgba(255,255,255,.28);
   --nav-h:68px;
   --ease:cubic-bezier(.23,1,.32,1);
 }
@@ -41,9 +39,6 @@ body{background:var(--blk);color:var(--t1);font-family:'Manrope',sans-serif;font
 a{text-decoration:none;color:inherit}
 button{font-family:'Manrope',sans-serif;border:none;background:none}
 ::selection{background:var(--or);color:var(--w)}
-::-webkit-scrollbar{width:4px}
-::-webkit-scrollbar-track{background:var(--dk)}
-::-webkit-scrollbar-thumb{background:var(--or);border-radius:2px}
 
 #nav{
   position:fixed;top:0;left:0;right:0;z-index:400;
@@ -60,48 +55,47 @@ button{font-family:'Manrope',sans-serif;border:none;background:none}
   border-bottom-color:var(--bd);
 }
 
-#progress{
-  position:fixed;top:var(--nav-h);left:0;z-index:399;
-  height:2px;background:var(--or);
-  width:0%;transition:width .1s linear;
-  box-shadow:0 0 8px var(--or);
-}
-
-.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo{display:flex;align-items:center;gap:12px;flex-shrink:0}
 .logo-mark{
-  width:32px;height:32px;background:var(--or);border-radius:6px;
+  width:40px;height:40px;
   display:grid;place-items:center;flex-shrink:0;
   transition:transform .4s var(--ease);
 }
-.logo:hover .logo-mark{transform:rotate(90deg)}
-.logo-mark svg{width:18px;height:18px;fill:var(--w)}
-.logo-text{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.1em;color:var(--w)}
+.logo:hover .logo-mark{transform:rotate(90deg) scale(1.1)}
+.logo-mark svg{width:40px;height:40px}
+.logo-text{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.12em;color:var(--w);font-weight:700}
 
-.nav-links{display:none}
-.nav-right{display:flex;align-items:center;gap:10px}
-.nav-wp{
-  display:flex;align-items:center;gap:5px;
-  font-size:11px;font-weight:600;color:#25D366;
-  border:1px solid rgba(37,211,102,.3);border-radius:100px;
-  padding:6px 14px;transition:all .25s;
+.nav-links{display:none;gap:4px;list-style:none}
+.nav-links a{
+  font-size:12px;font-weight:500;color:var(--t2);
+  padding:6px 12px;border-radius:100px;
+  transition:color .25s,background .25s;
 }
+.nav-links a:hover{color:var(--t1);background:var(--t3)}
+
+.nav-right{display:flex;align-items:center;gap:10px}
 .nav-cta{
   background:var(--or);color:var(--w);
   padding:8px 18px;border-radius:100px;
-  font-size:11px;font-weight:700;letter-spacing:.02em;
+  font-size:11px;font-weight:700;
   transition:all .25s;
   box-shadow:0 4px 20px var(--or-glow);
+}
+.nav-cta:hover{background:var(--or2);transform:translateY(-2px)}
+
+#progress{
+  position:fixed;top:var(--nav-h);left:0;z-index:399;
+  height:2px;background:var(--or);width:0%;
+  transition:width .1s linear;
+  box-shadow:0 0 8px var(--or);
 }
 
 .hero{
   min-height:100vh;
   padding:var(--nav-h) 20px 60px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;
+  justify-content:center;align-items:center;
+  text-align:center;position:relative;overflow:hidden;
 }
 .hero-grid-bg{
   position:absolute;inset:0;z-index:0;
@@ -121,13 +115,6 @@ button{font-family:'Manrope',sans-serif;border:none;background:none}
 @keyframes glow{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.8}50%{transform:translate(-50%,-50%) scale(1.1);opacity:1}}
 
 .hero-content{position:relative;z-index:1;max-width:600px;width:100%}
-.hero-badge{
-  display:inline-flex;align-items:center;gap:8px;
-  border:1px solid rgba(255,69,0,.3);background:rgba(255,69,0,.08);
-  padding:6px 14px;border-radius:100px;
-  font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--or2);
-  margin-bottom:24px;
-}
 .hero-h1{
   font-family:'Bebas Neue',sans-serif;
   font-size:clamp(42px,12vw,90px);
@@ -135,17 +122,14 @@ button{font-family:'Manrope',sans-serif;border:none;background:none}
 }
 .h1-orange{color:var(--or)}
 .hero-p{font-size:16px;color:var(--t2);margin-bottom:32px;line-height:1.6}
-.hero-btns{
-  display:flex;flex-direction:column;gap:12px;width:100%}
+.hero-btns{display:flex;flex-direction:column;gap:12px;width:100%}
 .btn-primary{
   background:var(--or);color:var(--w);
   padding:14px 28px;border-radius:100px;
-  font-size:14px;font-weight:700;letter-spacing:.02em;
+  font-size:14px;font-weight:700;
   transition:all .25s;
   box-shadow:0 4px 20px var(--or-glow);
-  display:inline-block;
-  width:100%;
-  text-align:center;
+  display:inline-block;width:100%;text-align:center;
 }
 .btn-primary:hover{background:var(--or2);transform:translateY(-2px);box-shadow:0 8px 30px var(--or-glow)}
 
@@ -216,7 +200,6 @@ button{font-family:'Manrope',sans-serif;border:none;background:none}
 .rev.show{animation:fadeUp .6s var(--ease) forwards}
 
 @media(min-width:768px){
-  :root{--nav-h:68px}
   #nav{padding:0 40px}
   .nav-links{display:flex}
   .hero{padding:var(--nav-h) 40px 80px;text-align:left;flex-direction:row;gap:60px;align-items:center}
@@ -231,7 +214,6 @@ button{font-family:'Manrope',sans-serif;border:none;background:none}
 }
 
 @media(min-width:1024px){
-  :root{--nav-h:68px}
   #nav{padding:0 60px}
   .hero{padding:var(--nav-h) 60px 100px;gap:80px}
   .sec{padding:140px 60px}
@@ -247,7 +229,16 @@ button{font-family:'Manrope',sans-serif;border:none;background:none}
 <nav id="nav">
   <a href="#" class="logo">
     <div class="logo-mark">
-      <svg viewBox="0 0 32 32"><path d="M16 7L6 12v8l10 5 10-5v-8L16 7zm0 2.5l7.5 3.75v5.5L16 22.5l-7.5-3.75v-5.5L16 9.5z" fill="white"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+        <defs>
+          <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#FF4500;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#FF6B35;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <rect width="40" height="40" rx="10" fill="url(#grad1)"/>
+        <path d="M20 8L8 14v12l12 6 12-6V14L20 8zm0 3l8 4v8l-8 4-8-4v-8l8-4z" fill="white" stroke="white" stroke-width="0.5"/>
+      </svg>
     </div>
     <span class="logo-text">NEXORA</span>
   </a>
@@ -257,8 +248,7 @@ button{font-family:'Manrope',sans-serif;border:none;background:none}
     <li><a href="#nosotros">Nosotros</a></li>
   </ul>
   <div class="nav-right">
-    <a href="https://wa.me/5492346314827" class="nav-wp">💬 WhatsApp</a>
-    <a href="#contacto" class="nav-cta">Auditoría →</a>
+    <a href="https://wa.me/5492346314827" class="nav-cta">Auditoría →</a>
   </div>
 </nav>
 
@@ -268,7 +258,6 @@ button{font-family:'Manrope',sans-serif;border:none;background:none}
   <div class="hero-grid-bg"></div>
   <div class="hero-glow"></div>
   <div class="hero-content">
-    <div class="hero-badge">Consultoría B2B · Argentina</div>
     <h1 class="hero-h1">
       <span class="h1-orange">NEXORA.</span><br>
       <em>estrategia humana.</em>
