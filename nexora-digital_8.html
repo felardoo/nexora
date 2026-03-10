@@ -20,9 +20,9 @@
 <meta name="twitter:title" content="Nexora — Consultoría de Marketing Digital">
 <meta name="twitter:description" content="Estrategia digital, pauta y contenido para empresas que quieren crecer.">
 
-<!-- Favicon SVG inline - CORREGIDO COLOR PARA COINCIDIR CON LOGO -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23FF4500'/%3E%3Cpath d='M16 8l8 4.5v7l-8 4.5-8-4.5v-7L16 8z' fill='white'/%3E%3C/svg%3E">
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23FF4500'/%3E%3Cpath d='M16 8l8 4.5v7l-8 4.5-8-4.5v-7L16 8z' fill='white'/%3E%3C/svg%3E">
+<!-- Favicon SVG inline - UNIFICADO CON LOGO Y COLOR EXACTO -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FF4500'/%3E%3Cpath d='M16 7L6 12v8l10 5 10-5v-8L16 7zm0 2.5l7.5 3.75v5.5L16 22.5l-7.5-3.75v-5.5L16 9.5z' fill='white'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FF4500'/%3E%3Cpath d='M16 7L6 12v8l10 5 10-5v-8L16 7zm0 2.5l7.5 3.75v5.5L16 22.5l-7.5-3.75v-5.5L16 9.5z' fill='white'/%3E%3C/svg%3E">
 
 <title>Nexora — Consultoría de Marketing Digital</title>
 
@@ -78,7 +78,7 @@ body.clicking #cDot{width:6px;height:6px;background:var(--w)}
 body.clicking #cRing{width:30px;height:30px}
 
 /* ══════════════════════════════════════════
-   NAV — FIJO CON ACTIVE STATE
+   NAV
 ══════════════════════════════════════════ */
 #nav{
   position:fixed;top:0;left:0;right:0;z-index:400;
@@ -96,7 +96,6 @@ body.clicking #cRing{width:30px;height:30px}
   border-bottom-color:var(--bd);
 }
 
-/* Progress bar */
 #progress{
   position:fixed;top:var(--nav-h);left:0;z-index:399;
   height:2px;background:var(--or);
@@ -112,7 +111,7 @@ body.clicking #cRing{width:30px;height:30px}
   position:relative;overflow:hidden;
 }
 .logo:hover .logo-mark{border-radius:50%;transform:rotate(90deg)}
-.logo-mark svg{width:17px;height:17px;fill:var(--w);position:relative;z-index:1}
+.logo-mark svg{width:20px;height:20px;fill:var(--w);position:relative;z-index:1}
 .logo-mark::after{
   content:'';position:absolute;inset:0;
   background:linear-gradient(135deg,rgba(255,255,255,.2),transparent);
@@ -124,10 +123,8 @@ body.clicking #cRing{width:30px;height:30px}
   font-size:13px;font-weight:500;color:var(--t2);
   padding:7px 14px;border-radius:100px;
   letter-spacing:.03em;transition:color .25s,background .25s;cursor:none;
-  position:relative;
 }
 .nav-links a:hover{color:var(--t1);background:var(--t4)}
-.nav-links a.active{color:var(--or2);background:var(--or-dim)}
 
 .nav-right{display:flex;align-items:center;gap:14px}
 .nav-wp{
@@ -136,7 +133,6 @@ body.clicking #cRing{width:30px;height:30px}
   border:1px solid rgba(37,211,102,.3);border-radius:100px;
   padding:8px 18px;transition:all .25s;cursor:none;
 }
-.nav-wp:hover{background:rgba(37,211,102,.08);border-color:rgba(37,211,102,.6)}
 .nav-cta{
   display:flex;align-items:center;gap:8px;
   background:var(--or);color:var(--w);
@@ -145,42 +141,17 @@ body.clicking #cRing{width:30px;height:30px}
   transition:all .25s;cursor:none;
   box-shadow:0 4px 20px var(--or-glow);
 }
-.nav-cta:hover{background:var(--or2);transform:translateY(-1px);box-shadow:0 8px 36px var(--or-glow)}
-.nav-cta-arrow{transition:transform .25s}
-.nav-cta:hover .nav-cta-arrow{transform:translateX(3px)}
-
-/* ══════════════════════════════════════════
-   MARQUEE
-══════════════════════════════════════════ */
-.marquee-bar{
-  margin-top:var(--nav-h);
-  background:var(--dk);border-bottom:1px solid var(--bd);
-  padding:14px 0;overflow:hidden;
-}
-.marquee-track{
-  display:flex;white-space:nowrap;
-  animation:marquee 26s linear infinite;
-}
-.marquee-track:hover{animation-play-state:paused}
-.m-item{
-  display:inline-flex;align-items:center;gap:14px;
-  padding:0 36px;
-  font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--t3);
-}
-.m-dot{width:4px;height:4px;background:var(--or);border-radius:50%;flex-shrink:0}
-@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* ══════════════════════════════════════════
    HERO
 ══════════════════════════════════════════ */
 .hero{
   min-height:100vh;
-  padding:80px 60px 100px;
+  padding:120px 60px 100px;
   display:grid;grid-template-columns:1fr 1fr;
   gap:60px;align-items:center;
   position:relative;overflow:hidden;
 }
-
 .hero-grid-bg{
   position:absolute;inset:0;z-index:0;
   background-image:
@@ -189,129 +160,25 @@ body.clicking #cRing{width:30px;height:30px}
   background-size:72px 72px;
   mask-image:radial-gradient(ellipse 90% 100% at 30% 50%,black 20%,transparent 75%);
 }
-.hero-glow-main{
-  position:absolute;top:-150px;right:-80px;z-index:0;
-  width:650px;height:650px;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,69,0,.09) 0%,transparent 65%);
-  animation:glow1 7s ease-in-out infinite;pointer-events:none;
-}
-.hero-glow-sec{
-  position:absolute;bottom:-60px;left:15%;z-index:0;
-  width:380px;height:380px;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,107,53,.055) 0%,transparent 65%);
-  animation:glow1 9s ease-in-out infinite reverse;pointer-events:none;
-}
-@keyframes glow1{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.12);opacity:1}}
-
-.hero-deco-n{
-  position:absolute;right:-60px;bottom:-100px;z-index:0;
-  font-family:'Bebas Neue',sans-serif;font-size:600px;line-height:1;
-  color:rgba(255,255,255,.016);pointer-events:none;user-select:none;letter-spacing:-.04em;
-}
-
-.hero-left{position:relative;z-index:1}
-
-.hero-badge{
-  display:inline-flex;align-items:center;gap:10px;
-  border:1px solid rgba(255,69,0,.3);background:rgba(255,69,0,.08);
-  padding:7px 18px;border-radius:100px;
-  font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--or2);
-  margin-bottom:32px;
-  opacity:0;animation:fadeUp .7s .4s ease forwards;
-}
-.badge-pulse{width:7px;height:7px;background:var(--or);border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
-
 .hero-h1{
   font-family:'Bebas Neue',sans-serif;
   font-size:clamp(76px,9.5vw,140px);
   line-height:.9;letter-spacing:.015em;margin-bottom:30px;
-  opacity:0;animation:fadeUp 1s .58s ease forwards;
 }
-.h1-row{display:block}
 .h1-orange{color:var(--or)}
-.h1-italic{
-  font-family:'Playfair Display',serif;font-style:italic;
-  font-size:.72em;letter-spacing:-.02em;color:var(--t1);
-  margin-left:-.05em;
-}
-
-.hero-p{
-  font-size:18px;color:var(--t2);max-width:520px;margin-bottom:48px;
-  opacity:0;animation:fadeUp .8s .7s ease forwards;
-}
-.hero-p strong{color:var(--t1);font-weight:700}
-
-.hero-btns{
-  display:flex;align-items:center;gap:20px;margin-bottom:64px;
-  opacity:0;animation:fadeUp .8s .82s ease forwards;
-}
-.btn-orange{
-  background:var(--or);color:var(--w);
-  padding:18px 38px;border-radius:100px;
-  font-size:15px;font-weight:800;letter-spacing:.02em;
-  display:flex;align-items:center;gap:10px;
-  transition:all .3s var(--ease);box-shadow:0 10px 30px var(--or-glow);
-}
-.btn-orange:hover{background:var(--or2);transform:translateY(-3px);box-shadow:0 15px 45px var(--or-glow)}
-.btn-outline{
-  border:1px solid var(--bd3);color:var(--t1);
-  padding:18px 38px;border-radius:100px;
-  font-size:15px;font-weight:700;
-  transition:all .3s;
-}
-.btn-outline:hover{background:var(--t4);border-color:var(--t2)}
-
-.hero-metrics{
-  display:flex;gap:48px;
-  opacity:0;animation:fadeUp .8s .95s ease forwards;
-}
-.metric{display:flex;flex-direction:column;gap:4px}
-.met-val{font-family:'Bebas Neue',sans-serif;font-size:38px;color:var(--w);line-height:1}
-.met-lab{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--t3)}
-
-.hero-right{position:relative;z-index:1}
-.hero-card-stack{position:relative;width:100%;height:500px}
-.h-card{
-  position:absolute;background:var(--mid);border:1px solid var(--bd2);
-  border-radius:24px;padding:32px;
-  box-shadow:0 30px 60px rgba(0,0,0,.4);
-  backdrop-filter:blur(10px);
-}
-.hc-1{
-  width:340px;top:0;right:0;z-index:3;
-  animation:float 6s ease-in-out infinite;
-}
-.hc-2{
-  width:280px;bottom:40px;left:40px;z-index:2;
-  background:var(--sur);
-  animation:float 6s ease-in-out infinite 1.5s;
-}
-.hc-3{
-  width:220px;top:120px;left:0;z-index:1;
-  border-color:var(--or-dim);
-  animation:float 6s ease-in-out infinite 3s;
-}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
-
-.hc-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:var(--or2);margin-bottom:16px;display:block}
-.hc-val{font-family:'Bebas Neue',sans-serif;font-size:52px;line-height:1;margin-bottom:8px}
-.hc-sub{font-size:13px;color:var(--t2)}
+.hero-p{font-size:18px;color:var(--t2);max-width:520px;margin-bottom:48px}
 
 /* ══════════════════════════════════════════
-   SECCIONES GENERALES
+   SECCIONES
 ══════════════════════════════════════════ */
 .sec{padding:140px 60px;position:relative}
 .sec-dark{background:var(--dk)}
 .sec-inner{max-width:1300px;margin:0 auto}
-
 .eyebrow{
   display:flex;align-items:center;gap:10px;
   font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.2em;color:var(--or);
   margin-bottom:20px;
 }
-.eyebrow::before{content:'';width:24px;height:1px;background:var(--or)}
-
 .sec-h2{
   font-family:'Bebas Neue',sans-serif;
   font-size:clamp(48px,6vw,84px);
@@ -319,12 +186,8 @@ body.clicking #cRing{width:30px;height:30px}
 }
 .sec-h2 em{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;text-transform:none;font-size:.9em}
 
-.sec-desc{font-size:19px;color:var(--t2);max-width:600px;line-height:1.6}
-
-.sec-head-2col{display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:flex-end;margin-bottom:80px}
-
 /* ══════════════════════════════════════════
-   SERVICIOS
+   CARDS & GRIDS
 ══════════════════════════════════════════ */
 .srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
 .srv{
@@ -333,233 +196,45 @@ body.clicking #cRing{width:30px;height:30px}
   transition:all .4s var(--ease);position:relative;overflow:hidden;
 }
 .srv:hover{background:var(--sur);border-color:var(--bd3);transform:translateY(-10px)}
-.srv-bg-n{
-  position:absolute;top:-20px;right:-10px;
-  font-family:'Bebas Neue',sans-serif;font-size:140px;
-  color:rgba(255,255,255,.03);line-height:1;pointer-events:none;
-}
 .srv-icon-wrap{
   width:64px;height:64px;background:var(--or-dim);
   border-radius:18px;display:grid;place-items:center;
   font-size:28px;margin-bottom:32px;
-  transition:transform .4s var(--ease);
 }
-.srv:hover .srv-icon-wrap{transform:scale(1.1) rotate(5deg);background:var(--or)}
-.srv-title{font-size:24px;font-weight:800;margin-bottom:16px;letter-spacing:-.01em}
-.srv-short{font-size:15px;color:var(--t2);margin-bottom:32px}
-
-.srv-expand-btn{
-  display:flex;align-items:center;gap:8px;
-  font-size:13px;font-weight:700;color:var(--or2);
-  transition:gap .3s;
-}
-.srv-expand-btn:hover{gap:12px}
-.srv-expand-btn svg{transition:transform .4s}
-.srv-expand-btn.active svg{transform:rotate(45deg)}
-
-.srv-detail{
-  max-height:0;overflow:hidden;
-  transition:max-height .5s var(--ease),margin .5s;
-}
-.srv-detail.open{max-height:600px;margin-top:24px}
-.srv-detail-inner{padding-top:20px;border-top:1px solid var(--bd);font-size:14px;color:var(--t2)}
-.srv-list{list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:10px}
-.srv-list li{display:flex;gap:10px;line-height:1.4}
-.srv-list li::before{content:'→';color:var(--or)}
-
-.srv-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}
-.srv-tag{
-  font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;
-  padding:5px 12px;border-radius:100px;background:var(--t4);color:var(--t3);
-  transition:all .3s;
-}
-.srv:hover .srv-tag{background:var(--bd2);color:var(--t2)}
+.srv-title{font-size:24px;font-weight:800;margin-bottom:16px}
+.srv-short{font-size:15px;color:var(--t2)}
 
 /* ══════════════════════════════════════════
-   PROCESO
+   HUMANIZACIÓN & CONFIANZA (NUEVO)
 ══════════════════════════════════════════ */
-.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bd);border:1px solid var(--bd);border-radius:32px;overflow:hidden}
-.proc-step{background:var(--blk);padding:48px;transition:background .3s}
-.proc-step:hover{background:var(--mid)}
-.proc-num{
-  font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--or);
-  margin-bottom:24px;display:block;
-}
-.proc-title{font-size:20px;font-weight:800;margin-bottom:16px}
-.proc-p{font-size:14px;color:var(--t2)}
+.trust-sec{background:var(--mid);border-radius:48px;padding:80px;margin-top:60px}
+.trust-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px}
+.trust-item{text-align:center}
+.trust-icon{font-size:40px;margin-bottom:20px;display:block}
+.trust-title{font-size:20px;font-weight:800;margin-bottom:12px}
+.trust-p{font-size:14px;color:var(--t2);line-height:1.6}
 
 /* ══════════════════════════════════════════
-   CALCULADORA ROI
+   RESPONSIVE
 ══════════════════════════════════════════ */
-.roi-sec{background:var(--mid);border-radius:48px;padding:80px;display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:center}
-.roi-controls{display:flex;flex-direction:column;gap:40px}
-.roi-field{display:flex;flex-direction:column;gap:16px}
-.roi-label-row{display:flex;justify-content:space-between;align-items:center}
-.roi-label{font-size:14px;font-weight:700;color:var(--t1)}
-.roi-val-bubble{background:var(--or);color:var(--w);padding:4px 12px;border-radius:100px;font-size:13px;font-weight:800}
-
-input[type=range]{-webkit-appearance:none;width:100%;background:transparent;cursor:none}
-input[type=range]::-webkit-slider-runnable-track{width:100%;height:6px;background:var(--bd3);border-radius:3px}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;height:20px;width:20px;border-radius:50%;background:var(--or);margin-top:-7px;box-shadow:0 0 15px var(--or-glow);transition:transform .2s}
-input[type=range]:active::-webkit-slider-thumb{transform:scale(1.3)}
-
-.roi-select{
-  background:var(--sur);border:1px solid var(--bd2);color:var(--t1);
-  padding:16px;border-radius:12px;font-family:inherit;font-size:15px;cursor:none;
+@media(max-width:1024px){
+  .srv-grid, .trust-grid{grid-template-columns:1fr}
+  .hero{grid-template-columns:1fr;text-align:center;padding-top:160px}
+  .hero-left{display:flex;flex-direction:column;align-items:center}
+  .hero-right{display:none}
+}
+@media(max-width:768px){
+  .sec{padding:80px 20px}
+  .nav-links, .nav-right{display:none}
+  #nav{padding:0 20px}
+  .hero-h1{font-size:60px}
 }
 
-.roi-result-card{
-  background:var(--blk);border:1px solid var(--bd3);border-radius:32px;
-  padding:48px;position:relative;overflow:hidden;
-}
-.roi-res-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
-.roi-res-item{display:flex;flex-direction:column;gap:8px}
-.roi-res-lab{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--t3)}
-.roi-res-val{font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:1;color:var(--w)}
-.roi-res-val span{font-size:24px;color:var(--or);margin-left:4px}
-
-.roi-disclaimer{margin-top:40px;padding-top:30px;border-top:1px solid var(--bd);font-size:12px;color:var(--t3);line-height:1.5}
-
-/* ══════════════════════════════════════════
-   PAQUETES
-══════════════════════════════════════════ */
-.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
-.plan-card{
-  background:var(--mid);border:1px solid var(--bd);
-  padding:48px;border-radius:40px;display:flex;flex-direction:column;
-  transition:all .4s var(--ease);position:relative;
-}
-.plan-card.featured{background:var(--sur);border-color:var(--or-dim);transform:scale(1.03);z-index:2}
-.plan-card.featured::before{
-  content:'MÁS ELEGIDO';position:absolute;top:24px;right:24px;
-  background:var(--or);color:var(--w);font-size:10px;font-weight:900;
-  padding:6px 14px;border-radius:100px;letter-spacing:.1em;
-}
-.plan-name{font-family:'Bebas Neue',sans-serif;font-size:32px;margin-bottom:8px}
-.plan-price{font-family:'Bebas Neue',sans-serif;font-size:54px;margin-bottom:4px;color:var(--w)}
-.plan-price span{font-size:16px;color:var(--t3);letter-spacing:0;font-family:'Manrope',sans-serif;font-weight:600}
-.plan-sub{font-size:13px;color:var(--t3);margin-bottom:32px}
-.plan-desc{font-size:15px;color:var(--t2);margin-bottom:40px;min-height:4.8em}
-
-.plan-features{list-style:none;display:flex;flex-direction:column;gap:16px;margin-bottom:48px;flex-grow:1}
-.plan-features li{font-size:14px;display:flex;gap:12px;align-items:flex-start}
-.feat-check{color:var(--green);font-weight:800}
-.feat-x{color:var(--red);opacity:.4}
-
-/* ══════════════════════════════════════════
-   FAQ
-══════════════════════════════════════════ */
-.faq-list{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
-.faq-item{background:var(--mid);border:1px solid var(--bd);border-radius:20px;overflow:hidden}
-.faq-q{
-  width:100%;padding:24px 32px;display:flex;justify-content:space-between;align-items:center;
-  font-size:17px;font-weight:700;text-align:left;transition:background .3s;
-}
-.faq-q:hover{background:var(--sur)}
-.faq-icon{font-size:20px;color:var(--t3);transition:transform .4s}
-.faq-item.open .faq-icon{transform:rotate(45deg);color:var(--or)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .5s var(--ease)}
-.faq-a-inner{padding:0 32px 32px;font-size:15px;color:var(--t2);line-height:1.7}
-
-/* ══════════════════════════════════════════
-   FOOTER
-══════════════════════════════════════════ */
-#footer{background:var(--dk);padding:100px 60px 40px;border-top:1px solid var(--bd)}
-.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:60px;margin-bottom:80px}
-.f-col-h{font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:var(--w);margin-bottom:32px}
-.f-links{list-style:none;display:flex;flex-direction:column;gap:16px}
-.f-links a{font-size:15px;color:var(--t2);transition:color .2s}
-.f-links a:hover{color:var(--or)}
-
-.f-contact-item{display:flex;gap:16px;margin-bottom:24px}
-.f-icon{font-size:20px}
-.f-label{font-size:12px;font-weight:700;color:var(--t3);text-transform:uppercase;display:block;margin-bottom:4px}
-.f-val{font-size:15px;color:var(--t1);font-weight:600}
-
-.footer-bottom{padding-top:40px;border-top:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center}
-.copy{font-size:13px;color:var(--t3)}
-.f-legal{display:flex;gap:24px}
-.f-legal a{font-size:13px;color:var(--t3);transition:color .2s}
-.f-legal a:hover{color:var(--t1)}
-
-/* ══════════════════════════════════════════
-   ANIMACIONES
-══════════════════════════════════════════ */
+/* ══ ANIMACIONES ══ */
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
 .rev{opacity:0}
 .rev.show{animation:fadeUp .8s var(--ease) forwards}
-.d1{animation-delay:.15s}
-.d2{animation-delay:.3s}
-.d3{animation-delay:.45s}
-
-/* ══════════════════════════════════════════
-   RESPONSIVE - MEJORADO PARA CELULAR
-══════════════════════════════════════════ */
-@media(max-width:1024px){
-  .sec-head-2col{grid-template-columns:1fr;gap:24px}
-  .plans-grid{grid-template-columns:1fr}
-  .proc-grid{grid-template-columns:1fr 1fr}
-  .srv-grid{grid-template-columns:1fr}
-  .roi-sec{grid-template-columns:1fr;padding:40px}
-}
-@media(max-width:768px){
-  :root{--nav-h:62px}
-  #nav{padding:0 20px}
-  .nav-links, .nav-wp, .nav-cta{display:none}
-  .nav-mobile-btn{display:block} /* Podrías agregar un menú hamburguesa aquí */
-  
-  .hero{grid-template-columns:1fr;padding:120px 20px 60px;text-align:center}
-  .hero-left{display:flex;flex-direction:column;align-items:center}
-  .hero-right{display:none}
-  .hero-h1{font-size:64px;margin-bottom:20px}
-  .hero-p{font-size:16px;margin:0 auto 32px}
-  .hero-btns{flex-direction:column;width:100%;gap:12px}
-  .btn-orange, .btn-outline{width:100%;justify-content:center}
-  .hero-metrics{flex-wrap:wrap;justify-content:center;gap:24px}
-  .metric{min-width:120px}
-  
-  .sec{padding:80px 20px}
-  .sec-h2{font-size:42px}
-  .sec-desc{font-size:16px}
-  
-  .proc-grid{grid-template-columns:1fr}
-  .proc-step{padding:32px}
-  
-  .roi-res-grid{grid-template-columns:1fr;gap:24px}
-  .roi-res-val{font-size:42px}
-  
-  .footer-top{grid-template-columns:1fr;gap:40px}
-  .footer-bottom{flex-direction:column;gap:20px;text-align:center}
-  .f-legal{flex-wrap:wrap;justify-content:center;gap:12px}
-  
-  /* Evitar sobreposición en móvil */
-  .srv, .plan-card, .proc-step{margin-bottom:20px}
-  .srv-grid, .plans-grid{gap:0}
-}
-
-/* ══ ANNOUNCEMENT BAR ══ */
-#ann{position:fixed;top:0;left:0;right:0;z-index:500;height:var(--ann-h);background:linear-gradient(90deg,#CC3700,var(--or),#FF6B35,var(--or),#CC3700);background-size:300% auto;animation:annGrad 6s linear infinite;display:flex;align-items:center;justify-content:center;gap:12px;padding:0 20px;transition:transform .4s cubic-bezier(.23,1,.32,1)}
-#ann.hide{transform:translateY(-100%)}
-@keyframes annGrad{0%{background-position:0% 50%}100%{background-position:300% 50%}}
-.ann-inner{display:flex;align-items:center;gap:12px;font-size:11px;font-weight:600;color:var(--w);letter-spacing:.03em;text-align:center}
-.ann-dot{width:7px;height:7px;background:var(--w);border-radius:50%;animation:blink 1.8s infinite;flex-shrink:0}
-.ann-link{border-bottom:1px solid rgba(255,255,255,.6);color:var(--w);font-weight:700;cursor:none}
-.ann-x{position:absolute;right:10px;background:none;border:none;color:rgba(255,255,255,.7);font-size:18px;cursor:none}
-
-/* ══ FLOATING CHAT BUBBLE ══ */
-#chatBubble{position:fixed;bottom:30px;right:20px;z-index:800}
-.chat-btn{width:56px;height:56px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 6px 20px rgba(37,211,102,.4)}
-.chat-btn svg{width:28px;height:28px;fill:var(--w)}
-
-/* ══ COOKIE BANNER ══ */
-#cookieBanner{position:fixed;bottom:20px;left:20px;right:20px;background:var(--sur);border:1px solid var(--bd2);padding:20px;border-radius:20px;z-index:900;display:flex;flex-direction:column;gap:16px;box-shadow:0 10px 40px rgba(0,0,0,.5)}
-@media(min-width:768px){ #cookieBanner{width:400px;right:auto} }
-.cookie-txt{font-size:13px;color:var(--t2)}
-.cookie-btns{display:flex;gap:10px}
-.btn-s{padding:8px 16px;border-radius:8px;font-size:12px;font-weight:700}
-.btn-s-or{background:var(--or);color:var(--w)}
-.btn-s-ghost{border:1px solid var(--bd3);color:var(--t2)}
 
 </style>
 </head>
@@ -568,360 +243,155 @@ input[type=range]:active::-webkit-slider-thumb{transform:scale(1.3)}
 <div id="cDot"></div>
 <div id="cRing"></div>
 
-<div id="ann">
-  <div class="ann-inner">
-    <div class="ann-dot"></div>
-    <span>🎯 Auditoría digital gratuita para nuevos clientes — <a href="#contacto" class="ann-link">Quiero la mía →</a></span>
-  </div>
-  <button class="ann-x" onclick="document.getElementById('ann').classList.add('hide'); document.documentElement.style.setProperty('--top-offset','68px')">×</button>
-</div>
-
 <nav id="nav">
   <a href="#" class="logo">
     <div class="logo-mark">
-      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      <svg viewBox="0 0 32 32"><path d="M16 7L6 12v8l10 5 10-5v-8L16 7zm0 2.5l7.5 3.75v5.5L16 22.5l-7.5-3.75v-5.5L16 9.5z"/></svg>
     </div>
     <span class="logo-text">NEXORA</span>
   </a>
   <ul class="nav-links">
     <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#proceso">Proceso</a></li>
-    <li><a href="#paquetes">Paquetes</a></li>
+    <li><a href="#estrategia">E-commerce</a></li>
     <li><a href="#nosotros">Nosotros</a></li>
-    <li><a href="#faq">FAQ</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
   <div class="nav-right">
-    <a href="https://wa.me/5492346314827" class="nav-wp">
-      <span>💬 WhatsApp</span>
-    </a>
-    <a href="#contacto" class="nav-cta">
-      Auditoría gratuita <span class="nav-cta-arrow">→</span>
-    </a>
+    <a href="https://wa.me/5492346314827" class="nav-wp">💬 WhatsApp</a>
+    <a href="#contacto" class="nav-cta">Auditoría gratuita →</a>
   </div>
 </nav>
 
 <div id="progress"></div>
 
-<div class="marquee-bar">
-  <div class="marquee-track">
-    <div class="m-item">Marketing Digital B2B <div class="m-dot"></div></div>
-    <div class="m-item">Estrategia de Contenidos <div class="m-dot"></div></div>
-    <div class="m-item">Meta Ads · Google Ads <div class="m-dot"></div></div>
-    <div class="m-item">SEO & Posicionamiento <div class="m-dot"></div></div>
-    <div class="m-item">Consultoría B2B <div class="m-dot"></div></div>
-    <div class="m-item">Email Marketing <div class="m-dot"></div></div>
-    <!-- Repeat for loop -->
-    <div class="m-item">Marketing Digital B2B <div class="m-dot"></div></div>
-    <div class="m-item">Estrategia de Contenidos <div class="m-dot"></div></div>
-    <div class="m-item">Meta Ads · Google Ads <div class="m-dot"></div></div>
-    <div class="m-item">SEO & Posicionamiento <div class="m-dot"></div></div>
-    <div class="m-item">Consultoría B2B <div class="m-dot"></div></div>
-    <div class="m-item">Email Marketing <div class="m-dot"></div></div>
-  </div>
-</div>
-
 <header class="hero">
   <div class="hero-grid-bg"></div>
-  <div class="hero-glow-main"></div>
-  <div class="hero-glow-sec"></div>
-  <div class="hero-deco-n">N</div>
-  
   <div class="hero-left">
-    <div class="hero-badge">
-      <div class="badge-pulse"></div>
-      Consultoría B2B · Chivilcoy, Buenos Aires
-    </div>
+    <div class="eyebrow">Consultoría B2B · Argentina</div>
     <h1 class="hero-h1">
-      <span class="h1-row">VENTAS <span class="h1-orange">REALES.</span></span>
-      <span class="h1-row h1-italic">estrategia que funciona.</span>
+      <span class="h1-orange">NEXORA.</span><br>
+      <em>estrategia humana.</em>
     </h1>
     <p class="hero-p">
-      Nexora ayuda a empresas argentinas a <strong>vender más en canales digitales</strong>. Estrategia, pauta y contenido bajo contrato mensual, con métricas que importan.
+      No somos una agencia más. Somos tu equipo de crecimiento. Humanizamos tu marca para que tus clientes no solo compren, sino que confíen.
     </p>
-    <div class="hero-btns">
-      <a href="#contacto" class="btn-orange">Auditoría gratuita →</a>
-      <a href="#paquetes" class="btn-outline">Ver paquetes</a>
-    </div>
-    <div class="hero-metrics">
-      <div class="metric">
-        <span class="met-val">148+</span>
-        <span class="met-lab">Proyectos</span>
-      </div>
-      <div class="metric">
-        <span class="met-val">97%</span>
-        <span class="met-lab">Satisfacción</span>
-      </div>
-      <div class="metric">
-        <span class="met-val">3.8x</span>
-        <span class="met-lab">ROAS Promedio</span>
-      </div>
+    <div style="display:flex;gap:20px">
+      <a href="#contacto" style="background:var(--or);color:var(--w);padding:18px 38px;border-radius:100px;font-weight:800">Empezar ahora →</a>
     </div>
   </div>
-
   <div class="hero-right">
-    <div class="hero-card-stack">
-      <div class="h-card hc-1">
-        <span class="hc-label">Ventas Generadas</span>
-        <div class="hc-val">$680K+</div>
-        <p class="hc-sub">En ventas para clientes este año</p>
-      </div>
-      <div class="h-card hc-2">
-        <span class="hc-label">Optimización</span>
-        <div class="hc-val">+42%</div>
-        <p class="hc-sub">Mejora en tasa de conversión</p>
-      </div>
-      <div class="h-card hc-3">
-        <span class="hc-label">Alcance</span>
-        <div class="hc-val">2.4M</div>
-        <p class="hc-sub">Impresiones mensuales</p>
-      </div>
-    </div>
+    <!-- Decoración visual -->
+    <div style="width:100%;height:400px;background:var(--mid);border-radius:32px;border:1px solid var(--bd);display:grid;place-items:center;font-family:'Bebas Neue';font-size:120px;color:var(--or-dim)">NEXORA</div>
   </div>
 </header>
 
 <section class="sec sec-dark" id="servicios">
   <div class="sec-inner">
-    <div class="sec-head-2col">
-      <div class="rev">
-        <div class="eyebrow">Lo que hacemos</div>
-        <h2 class="sec-h2">Servicios diseñados<br>para <em>vender más</em></h2>
-      </div>
-      <p class="sec-desc rev d1">
-        Cada servicio está pensado para un objetivo concreto. Sin paquetes genéricos: armamos la estrategia según tu negocio, tu mercado y tus metas reales.
-      </p>
+    <div class="rev">
+      <div class="eyebrow">Lo que hacemos</div>
+      <h2 class="sec-h2">Servicios para <em>vender más</em></h2>
     </div>
-
     <div class="srv-grid rev">
-      <!-- S1 -->
       <div class="srv">
-        <div class="srv-bg-n">01</div>
         <div class="srv-icon-wrap">📊</div>
-        <div class="srv-title">Estrategia y Consultoría</div>
-        <p class="srv-short">Analizamos tu negocio, tu competencia y tu audiencia para construir una hoja de ruta digital con objetivos medibles.</p>
-        <div class="srv-detail-inner">
-          <ul class="srv-list">
-            <li>Auditoría digital completa</li>
-            <li>Análisis de competidores</li>
-            <li>Definición de KPIs de éxito</li>
-            <li>Roadmap mensual de trabajo</li>
-          </ul>
-        </div>
+        <div class="srv-title">Estrategia Real</div>
+        <p class="srv-short">Auditamos tu negocio y creamos una hoja de ruta con objetivos que se entienden, no solo métricas de vanidad.</p>
       </div>
-      <!-- S2 -->
       <div class="srv">
-        <div class="srv-bg-n">02</div>
         <div class="srv-icon-wrap">📣</div>
-        <div class="srv-title">Publicidad Digital</div>
-        <p class="srv-short">Gestión de campañas en Meta Ads y Google Ads orientadas a conversión real y optimización de presupuesto.</p>
-        <div class="srv-detail-inner">
-          <ul class="srv-list">
-            <li>Meta Ads (FB e IG)</li>
-            <li>Google Search & Shopping</li>
-            <li>Retargeting avanzado</li>
-            <li>A/B Testing de creatividades</li>
-          </ul>
-        </div>
+        <div class="srv-title">Pauta Humana</div>
+        <p class="srv-short">Campañas en Meta y Google Ads diseñadas para personas, optimizando cada peso para maximizar tu retorno.</p>
       </div>
-      <!-- S3 -->
       <div class="srv">
-        <div class="srv-bg-n">03</div>
         <div class="srv-icon-wrap">✍️</div>
-        <div class="srv-title">Contenido y SEO</div>
-        <p class="srv-short">Contenido que posiciona y convierte. Estrategia editorial y optimización orgánica para crecer sin depender solo de pauta.</p>
-        <div class="srv-detail-inner">
-          <ul class="srv-list">
-            <li>Estrategia editorial mensual</li>
-            <li>Redacción SEO para blogs</li>
-            <li>Gestión de redes sociales</li>
-            <li>Optimización On-page</li>
-          </ul>
-        </div>
+        <div class="srv-title">Contenido SEO</div>
+        <p class="srv-short">Posicionamos tu marca orgánicamente con contenido que educa, informa y convierte visitantes en clientes.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- NUEVA SECCIÓN: ESTRATEGIA E-COMMERCE (Basada en PDF) -->
-<section class="sec" id="ecommerce-estrategia">
+<section class="sec" id="estrategia">
   <div class="sec-inner">
     <div class="rev">
-      <div class="eyebrow">Especialistas en E-commerce</div>
-      <h2 class="sec-h2">Claves para un<br><em>éxito asegurado</em></h2>
+      <div class="eyebrow">Estrategia E-commerce</div>
+      <h2 class="sec-h2">Claves del <em>éxito asegurado</em></h2>
     </div>
-    <div class="srv-grid rev d1">
+    
+    <div class="srv-grid rev">
       <div class="srv">
         <div class="srv-icon-wrap">📦</div>
-        <div class="srv-title">Logística y Envío</div>
-        <p class="srv-short">Aseguramos que tu servicio de entrega sea impecable. Entregas en 24hs para ser más competitivo.</p>
+        <div class="srv-title">Logística Impecable</div>
+        <p class="srv-short">Te ayudamos a optimizar tus envíos. Entregas en 24hs para ser el más competitivo del mercado.</p>
       </div>
       <div class="srv">
-        <div class="srv-icon-wrap">💰</div>
-        <div class="srv-title">Política de Precios</div>
-        <p class="srv-short">Análisis de competencia y diseño de campañas de promoción en fechas clave (Hot Sale, Black Friday).</p>
+        <div class="srv-icon-wrap">🏷️</div>
+        <div class="srv-title">Precios Inteligentes</div>
+        <p class="srv-short">Análisis de competencia y campañas en fechas clave (Hot Sale, Black Friday) para reventar ventas.</p>
       </div>
       <div class="srv">
-        <div class="srv-icon-wrap">🤝</div>
-        <div class="srv-title">Atención Humana</div>
-        <p class="srv-short">Humanizamos tu marca en redes sociales para generar mayor interacción y confianza con el cliente.</p>
+        <div class="srv-icon-wrap">📱</div>
+        <div class="srv-title">Venta en Redes</div>
+        <p class="srv-short">Explotamos Instagram y TikTok para derivar tráfico directo a tu tienda y fidelizar a tu audiencia.</p>
       </div>
     </div>
-  </div>
-</section>
 
-<section class="sec sec-dark" id="proceso">
-  <div class="sec-inner">
-    <div class="rev" style="margin-bottom:60px">
-      <div class="eyebrow">Cómo trabajamos</div>
-      <h2 class="sec-h2">Un proceso <em>claro</em></h2>
-    </div>
-    <div class="proc-grid rev d1">
-      <div class="proc-step">
-        <span class="proc-num">01</span>
-        <div class="proc-title">Escuchamos</div>
-        <p class="proc-p">Reunión de diagnóstico sin costo para entender tus objetivos y presupuesto.</p>
+    <!-- SECCIÓN DE CONFIANZA BASADA EN PDF -->
+    <div class="trust-sec rev">
+      <div style="text-align:center;margin-bottom:50px">
+        <h3 style="font-family:'Bebas Neue';font-size:42px">¿Por qué elegirnos?</h3>
+        <p style="color:var(--t2)">Aplicamos los pilares fundamentales del e-commerce moderno.</p>
       </div>
-      <div class="proc-step">
-        <span class="proc-num">02</span>
-        <div class="proc-title">Diseñamos</div>
-        <p class="proc-p">Propuesta personalizada con estrategia, canales y proyección de resultados.</p>
-      </div>
-      <div class="proc-step">
-        <span class="proc-num">03</span>
-        <div class="proc-title">Ejecutamos</div>
-        <p class="proc-p">Onboarding automático, acceso a dashboard y ejecución del plan mensual.</p>
-      </div>
-      <div class="proc-step">
-        <span class="proc-num">04</span>
-        <div class="proc-title">Escalamos</div>
-        <p class="proc-p">Optimizamos lo que funciona para escalar tus ventas mes a mes.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="paquetes">
-  <div class="sec-inner">
-    <div class="rev" style="text-align:center;margin-bottom:60px">
-      <div class="eyebrow" style="justify-content:center">Planes y Precios</div>
-      <h2 class="sec-h2">El plan <em>correcto</em></h2>
-    </div>
-    <div class="plans-grid rev d1">
-      <div class="plan-card">
-        <div class="plan-name">Starter</div>
-        <div class="plan-price">$350.000 <span>/ mes</span></div>
-        <p class="plan-desc">Ideal para arrancar con estrategia clara y datos reales.</p>
-        <ul class="plan-features">
-          <li><span class="feat-check">✓</span> Auditoría digital inicial</li>
-          <li><span class="feat-check">✓</span> Estrategia de contenidos</li>
-          <li><span class="feat-check">✓</span> Gestión de 1 red social</li>
-          <li><span class="feat-check">✓</span> Reporte mensual de KPIs</li>
-        </ul>
-        <a href="https://wa.me/5492346314827" class="btn-outline" style="text-align:center">Empezar ahora</a>
-      </div>
-      <div class="plan-card featured">
-        <div class="plan-name">Growth</div>
-        <div class="plan-price">$680.000 <span>/ mes</span></div>
-        <p class="plan-desc">Para empresas que quieren escalar rápido con pauta y SEO.</p>
-        <ul class="plan-features">
-          <li><span class="feat-check">✓</span> Todo lo de Starter</li>
-          <li><span class="feat-check">✓</span> Meta Ads + Google Ads</li>
-          <li><span class="feat-check">✓</span> Optimización SEO On-page</li>
-          <li><span class="feat-check">✓</span> 2 reuniones mensuales</li>
-        </ul>
-        <a href="https://wa.me/5492346314827" class="btn-orange" style="justify-content:center">Elegir Growth</a>
-      </div>
-      <div class="plan-card">
-        <div class="plan-name">Enterprise</div>
-        <div class="plan-price">A medida</div>
-        <p class="plan-desc">Soluciones personalizadas para proyectos de gran escala.</p>
-        <ul class="plan-features">
-          <li><span class="feat-check">✓</span> Consultoría semanal</li>
-          <li><span class="feat-check">✓</span> Equipo dedicado</li>
-          <li><span class="feat-check">✓</span> Pauta sin límite</li>
-          <li><span class="feat-check">✓</span> Soporte prioritario</li>
-        </ul>
-        <a href="https://wa.me/5492346314827" class="btn-outline" style="text-align:center">Contactar</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer id="footer">
-  <div class="sec-inner">
-    <div class="footer-top">
-      <div class="f-col">
-        <a href="#" class="logo" style="margin-bottom:24px">
-          <div class="logo-mark"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-          <span class="logo-text">NEXORA</span>
-        </a>
-        <p style="font-size:14px;color:var(--t2);line-height:1.6">Consultoría de marketing digital enfocada en resultados reales para empresas argentinas.</p>
-      </div>
-      <div class="f-col">
-        <div class="f-col-h">Navegación</div>
-        <ul class="f-links">
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#proceso">Proceso</a></li>
-          <li><a href="#paquetes">Paquetes</a></li>
-          <li><a href="#nosotros">Nosotros</a></li>
-        </ul>
-      </div>
-      <div class="f-col">
-        <div class="f-col-h">Contacto</div>
-        <div class="f-contact-item">
-          <div>
-            <span class="f-label">Email</span>
-            <span class="f-val">hola@nexora.ar</span>
-          </div>
+      <div class="trust-grid">
+        <div class="trust-item">
+          <span class="trust-icon">🤝</span>
+          <div class="trust-title">Humanización</div>
+          <p class="trust-p">No mostramos solo lo que sale bien. Mostramos el camino real, humanizando tu marca para generar interacción verdadera.</p>
         </div>
-        <div class="f-contact-item">
-          <div>
-            <span class="f-label">WhatsApp</span>
-            <span class="f-val">+54 9 2346 314827</span>
-          </div>
+        <div class="trust-item">
+          <span class="trust-icon">🛡️</span>
+          <div class="trust-title">Garantía de Éxito</div>
+          <p class="trust-p">Si tu servicio de entrega y atención es impecable, el éxito está asegurado. Nosotros nos encargamos de que el mundo lo sepa.</p>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">💬</span>
+          <div class="trust-title">Atención Real</div>
+          <p class="trust-p">Hablamos de manera humana. Que el cliente sepa que habla con una persona, no con un robot de ventas.</p>
         </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="copy">© 2026 Nexora Digital. Todos los derechos reservados.</div>
-      <div class="f-legal">
-        <a href="#">Términos</a>
+  </div>
+</section>
+
+<footer class="sec sec-dark" id="contacto">
+  <div class="sec-inner" style="text-align:center">
+    <div class="rev">
+      <h2 class="sec-h2">¿Listo para <em>escalar</em>?</h2>
+      <p style="margin-bottom:40px;color:var(--t2)">Solicitá tu auditoría gratuita y recibí un plan personalizado en menos de 24hs.</p>
+      <a href="https://wa.me/5492346314827" style="background:var(--or);color:var(--w);padding:20px 40px;border-radius:100px;font-weight:800;display:inline-block">Hablar por WhatsApp →</a>
+    </div>
+    <div style="margin-top:80px;padding-top:40px;border-top:1px solid var(--bd);display:flex;justify-content:space-between;font-size:13px;color:var(--t3)">
+      <span>© 2026 NEXORA DIGITAL</span>
+      <div style="display:flex;gap:20px">
         <a href="#">Privacidad</a>
-        <a href="#">Cookies</a>
+        <a href="#">Términos</a>
       </div>
     </div>
   </div>
 </footer>
 
-<div id="chatBubble">
-  <a href="https://wa.me/5492346314827" class="chat-btn" target="_blank">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .018 5.393 0 12.029c0 2.119.554 4.188 1.604 6.03l-1.704 6.223 6.365-1.67a11.83 11.83 0 005.78 1.504h.005c6.637 0 12.032-5.395 12.035-12.032a11.762 11.762 0 00-3.41-8.475"/></svg>
-  </a>
-</div>
-
-<div id="cookieBanner">
-  <p class="cookie-txt">Utilizamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestra política de cookies.</p>
-  <div class="cookie-btns">
-    <button class="btn-s btn-s-or" onclick="document.getElementById('cookieBanner').style.display='none'">Aceptar</button>
-    <button class="btn-s btn-s-ghost" onclick="document.getElementById('cookieBanner').style.display='none'">Denegar</button>
-  </div>
-</div>
-
 <script>
-// Scroll logic
 window.addEventListener('scroll', () => {
   const nav = document.getElementById('nav');
   const progress = document.getElementById('progress');
   const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   const scrolled = (winScroll / height) * 100;
-  
   progress.style.width = scrolled + '%';
   if (winScroll > 50) nav.classList.add('solid');
   else nav.classList.remove('solid');
 });
 
-// Cursor logic
 const dot = document.getElementById('cDot');
 const ring = document.getElementById('cRing');
 document.addEventListener('mousemove', (e) => {
@@ -931,13 +401,11 @@ document.addEventListener('mousemove', (e) => {
   ring.style.top = e.clientY + 'px';
 });
 
-// Reveal animations
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) entry.target.classList.add('show');
   });
 }, { threshold: 0.1 });
-
 document.querySelectorAll('.rev').forEach(el => observer.observe(el));
 </script>
 
