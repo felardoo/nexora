@@ -21,12 +21,69 @@
 <meta name="twitter:description" content="Estrategia digital, pauta y contenido para empresas que quieren crecer.">
 
 <!-- Favicon SVG inline -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23FF4500'/%3E%3Cpolygon points='16,4 28,10 28,22 16,28 4,22 4,10' fill='none' stroke='white' stroke-width='2.2'/%3E%3Cpolygon points='16,10 22,13 22,19 16,22 10,19 10,13' fill='white'/%3E%3C/svg%3E">
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23FF4500'/%3E%3Cpolygon points='16,4 28,10 28,22 16,28 4,22 4,10' fill='none' stroke='white' stroke-width='2.2'/%3E%3Cpolygon points='16,10 22,13 22,19 16,22 10,19 10,13' fill='white'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect width='34' height='34' rx='8' fill='%23FF4500'/%3E%3Cpath d='M17 8.5 L25.5 12.75 L25.5 21.25 L17 25.5 L8.5 21.25 L8.5 12.75 Z' fill='none' stroke='white' stroke-width='1.8'/%3E%3Cpath d='M17 13.5 L21 15.5 L21 19.5 L17 21.5 L13 19.5 L13 15.5 Z' fill='white'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect width='34' height='34' rx='8' fill='%23FF4500'/%3E%3Cpath d='M17 8.5 L25.5 12.75 L25.5 21.25 L17 25.5 L8.5 21.25 L8.5 12.75 Z' fill='none' stroke='white' stroke-width='1.8'/%3E%3Cpath d='M17 13.5 L21 15.5 L21 19.5 L17 21.5 L13 19.5 L13 15.5 Z' fill='white'/%3E%3C/svg%3E">
 
 <title>Nexora — Consultoría de Marketing Digital</title>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+// ══════════════════════════════════════════
+// LEGAL & COOKIES JS
+// ══════════════════════════════════════════
+const legalData = {
+  terms: {
+    title: 'Términos y Condiciones',
+    content: '<p class="legal-p">Bienvenido a Nexora. Al acceder a nuestro sitio web, usted acepta cumplir con estos términos y condiciones de uso. Nuestra consultoría ofrece servicios de marketing digital B2B bajo acuerdos específicos por proyecto o mensualidad.</p><p class="legal-p">Todo el contenido de este sitio es propiedad de Nexora y no puede ser reproducido sin autorización previa.</p>'
+  },
+  privacy: {
+    title: 'Política de Privacidad',
+    content: '<p class="legal-p">En Nexora valoramos su privacidad. Los datos recolectados a través de nuestros formularios (email, nombre) se utilizan exclusivamente para contactarlo y ofrecerle nuestros servicios de consultoría.</p><p class="legal-p">No compartimos sus datos con terceros y cumplimos con las normativas vigentes de protección de datos personales.</p>'
+  },
+  cookies: {
+    title: 'Política de Cookies',
+    content: '<p class="legal-p">Este sitio utiliza cookies técnicas y analíticas para entender cómo interactúan los usuarios con nuestra web. Esto nos ayuda a mejorar la experiencia de navegación y la relevancia de nuestros contenidos.</p><p class="legal-p">Usted puede configurar su navegador para bloquear estas cookies, aunque algunas funciones del sitio podrían verse afectadas.</p>'
+  },
+  legal: {
+    title: 'Aviso Legal',
+    content: '<p class="legal-p">Nexora — Consultoría de Marketing Digital B2B. Responsable: Felipe Mattocio. Ubicación: Chivilcoy, Buenos Aires, Argentina.</p><p class="legal-p">Para cualquier consulta legal o comercial, puede contactarnos en felipemattocio@gmail.com.</p>'
+  }
+};
+
+function openLegal(type) {
+  const data = legalData[type];
+  document.getElementById('legalBody').innerHTML = `<h2 class="legal-h">${data.title}</h2>${data.content}`;
+  document.getElementById('legalModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLegal() {
+  document.getElementById('legalModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function acceptCookies() {
+  localStorage.setItem('cookiesAccepted', 'true');
+  closeCookies();
+}
+
+function closeCookies() {
+  document.getElementById('cookieBanner').classList.remove('active');
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  if (!localStorage.getItem('cookiesAccepted')) {
+    setTimeout(() => {
+      document.getElementById('cookieBanner').classList.add('active');
+    }, 2000);
+  }
+});
+
+// Cerrar modal al hacer click fuera
+document.getElementById('legalModal').addEventListener('click', (e) => {
+  if (e.target.id === 'legalModal') closeLegal();
+});
+
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
 
@@ -1089,6 +1146,46 @@ footer{
 .guide-tag{font-size:11px;color:var(--t3);border:1px solid var(--bd);padding:4px 11px;border-radius:4px;letter-spacing:.03em}
 .guide-card:hover .guide-tag{border-color:rgba(255,69,0,.2);color:var(--or2)}
 
+
+/* ══════════════════════════════════════════
+   LEGAL POPUPS & COOKIES
+   ══════════════════════════════════════════ */
+.legal-modal {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(8,8,8,.85); backdrop-filter: blur(12px);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity .4s var(--ease);
+  padding: 20px;
+}
+.legal-modal.active { opacity: 1; pointer-events: auto; }
+.legal-content {
+  background: var(--dk); border: 1px solid var(--bd); border-radius: 24px;
+  max-width: 700px; width: 100%; max-height: 85vh; overflow-y: auto;
+  padding: 40px; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,.5);
+}
+.legal-close {
+  position: absolute; top: 20px; right: 20px; font-size: 24px; color: var(--t3);
+  cursor: none; transition: color .2s;
+}
+.legal-close:hover { color: var(--or); }
+.legal-h { font-family: 'Bebas Neue', sans-serif; font-size: 32px; color: var(--or); margin-bottom: 20px; }
+.legal-p { color: var(--t2); font-size: 14px; line-height: 1.7; margin-bottom: 16px; }
+
+#cookieBanner {
+  position: fixed; bottom: 30px; left: 30px; right: 30px; z-index: 1500;
+  background: var(--dk); border: 1px solid var(--or); border-radius: 16px;
+  padding: 20px 30px; display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.6); transform: translateY(150%); transition: transform .6s var(--ease);
+}
+#cookieBanner.active { transform: translateY(0); }
+.cookie-t { color: var(--t1); font-size: 14px; font-weight: 500; }
+.cookie-btns { display: flex; gap: 12px; }
+.cookie-btn { padding: 8px 20px; border-radius: 100px; font-size: 12px; font-weight: 700; cursor: none; transition: all .2s; }
+.cookie-accept { background: var(--or); color: var(--w); }
+.cookie-accept:hover { background: var(--or2); transform: scale(1.05); }
+.cookie-decline { border: 1px solid var(--bd2); color: var(--t3); }
+.cookie-decline:hover { background: var(--t4); color: var(--t1); }
+
 </style>
 </head>
 <body>
@@ -1816,6 +1913,24 @@ footer{
 </section>
 
 <!-- ══ FOOTER ══ -->
+
+<!-- ══ LEGAL MODAL ══ -->
+<div id="legalModal" class="legal-modal">
+  <div class="legal-content">
+    <button class="legal-close" onclick="closeLegal()">×</button>
+    <div id="legalBody"></div>
+  </div>
+</div>
+
+<!-- ══ COOKIE BANNER ══ -->
+<div id="cookieBanner">
+  <div class="cookie-t">Utilizamos cookies para mejorar tu experiencia y analizar nuestro tráfico. Al continuar navegando, aceptas nuestros términos.</div>
+  <div class="cookie-btns">
+    <button class="cookie-btn cookie-decline" onclick="closeCookies()">Rechazar</button>
+    <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Aceptar todo</button>
+  </div>
+</div>
+
 <footer>
   <div class="footer-top">
     <div class="fb">
@@ -1872,11 +1987,11 @@ footer{
   </div>
   <div class="footer-bottom" style="flex-direction:column;gap:16px;text-align:center">
     <div style="display:flex;gap:24px;flex-wrap:wrap;justify-content:center">
-      <a href="#" style="font-size:11.5px;color:var(--t3);transition:color .25s;cursor:none" onmouseover="this.style.color='var(--t2)'" onmouseout="this.style.color='var(--t3)'">Términos y Condiciones</a>
-      <a href="#" style="font-size:11.5px;color:var(--t3);transition:color .25s;cursor:none" onmouseover="this.style.color='var(--t2)'" onmouseout="this.style.color='var(--t3)'">Política de Privacidad</a>
-      <a href="#" style="font-size:11.5px;color:var(--t3);transition:color .25s;cursor:none" onmouseover="this.style.color='var(--t2)'" onmouseout="this.style.color='var(--t3)'">Política de Cookies</a>
-      <a href="#" style="font-size:11.5px;color:var(--t3);transition:color .25s;cursor:none" onmouseover="this.style.color='var(--t2)'" onmouseout="this.style.color='var(--t3)'">Aviso Legal</a>
-    </div>
+      <a href="javascript:void(0)" onclick="openLegal('terms')" style="font-size:11.5px;color:var(--t3);transition:color .25s;cursor:none" onmouseover="this.style.color='var(--t2)'" onmouseout="this.style.color='var(--t3)'">Términos y Condiciones</a>
+      <a href="javascript:void(0)" onclick="openLegal('privacy')" style="font-size:11.5px;color:var(--t3);transition:color .25s;cursor:none" onmouseover="this.style.color='var(--t2)'" onmouseout="this.style.color='var(--t3)'">Política de Privacidad</a>
+      <a href="javascript:void(0)" onclick="openLegal('cookies')" style="font-size:11.5px;color:var(--t3);transition:color .25s;cursor:none" onmouseover="this.style.color='var(--t2)'" onmouseout="this.style.color='var(--t3)'">Política de Cookies</a>
+      <a href="javascript:void(0)" onclick="openLegal('legal')" style="font-size:11.5px;color:var(--t3);transition:color .25s;cursor:none" onmouseover="this.style.color='var(--t2)'" onmouseout="this.style.color='var(--t3)'">Aviso Legal</a>
+</div>
     <div style="display:flex;justify-content:space-between;width:100%;align-items:center;flex-wrap:wrap;gap:12px">
       <span class="fc-copy">© 2025 Nexora. Todos los derechos reservados. · Chivilcoy, Buenos Aires, Argentina</span>
       <span class="fc-by">Desarrollado por <strong>Felipe Mattocio</strong></span>
@@ -2187,6 +2302,63 @@ setInterval(()=>showToast(), 38000);
   tick();
   setInterval(tick, 1000);
 })();
+
+// ══════════════════════════════════════════
+// LEGAL & COOKIES JS
+// ══════════════════════════════════════════
+const legalData = {
+  terms: {
+    title: 'Términos y Condiciones',
+    content: '<p class="legal-p">Bienvenido a Nexora. Al acceder a nuestro sitio web, usted acepta cumplir con estos términos y condiciones de uso. Nuestra consultoría ofrece servicios de marketing digital B2B bajo acuerdos específicos por proyecto o mensualidad.</p><p class="legal-p">Todo el contenido de este sitio es propiedad de Nexora y no puede ser reproducido sin autorización previa.</p>'
+  },
+  privacy: {
+    title: 'Política de Privacidad',
+    content: '<p class="legal-p">En Nexora valoramos su privacidad. Los datos recolectados a través de nuestros formularios (email, nombre) se utilizan exclusivamente para contactarlo y ofrecerle nuestros servicios de consultoría.</p><p class="legal-p">No compartimos sus datos con terceros y cumplimos con las normativas vigentes de protección de datos personales.</p>'
+  },
+  cookies: {
+    title: 'Política de Cookies',
+    content: '<p class="legal-p">Este sitio utiliza cookies técnicas y analíticas para entender cómo interactúan los usuarios con nuestra web. Esto nos ayuda a mejorar la experiencia de navegación y la relevancia de nuestros contenidos.</p><p class="legal-p">Usted puede configurar su navegador para bloquear estas cookies, aunque algunas funciones del sitio podrían verse afectadas.</p>'
+  },
+  legal: {
+    title: 'Aviso Legal',
+    content: '<p class="legal-p">Nexora — Consultoría de Marketing Digital B2B. Responsable: Felipe Mattocio. Ubicación: Chivilcoy, Buenos Aires, Argentina.</p><p class="legal-p">Para cualquier consulta legal o comercial, puede contactarnos en felipemattocio@gmail.com.</p>'
+  }
+};
+
+function openLegal(type) {
+  const data = legalData[type];
+  document.getElementById('legalBody').innerHTML = `<h2 class="legal-h">${data.title}</h2>${data.content}`;
+  document.getElementById('legalModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLegal() {
+  document.getElementById('legalModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function acceptCookies() {
+  localStorage.setItem('cookiesAccepted', 'true');
+  closeCookies();
+}
+
+function closeCookies() {
+  document.getElementById('cookieBanner').classList.remove('active');
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  if (!localStorage.getItem('cookiesAccepted')) {
+    setTimeout(() => {
+      document.getElementById('cookieBanner').classList.add('active');
+    }, 2000);
+  }
+});
+
+// Cerrar modal al hacer click fuera
+document.getElementById('legalModal').addEventListener('click', (e) => {
+  if (e.target.id === 'legalModal') closeLegal();
+});
+
 </script>
 </body>
 </html>
