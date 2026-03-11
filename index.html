@@ -104,9 +104,9 @@ document.getElementById('legalModal').addEventListener('click', (e) => {
   --ease:cubic-bezier(.23,1,.32,1);
 }
 html{scroll-behavior:smooth;font-size:16px}
-body{background:var(--blk);color:var(--t1);font-family:'Manrope',sans-serif;font-weight:400;overflow-x:hidden;cursor:none;line-height:1.6;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpolygon points='50,10 85,30 85,70 50,90 15,70 15,30' fill='none' stroke='rgba(255,69,0,0.05)' stroke-width='1'/%3E%3Cpolygon points='50,35 70,47 70,72 50,85 30,72 30,47' fill='rgba(255,69,0,0.03)'/%3E%3C/svg%3E");background-size:100px 100px;background-attachment:fixed;}
-a{text-decoration:none;color:inherit;cursor:none}
-button{cursor:none;font-family:'Manrope',sans-serif;border:none;background:none}
+body{background:var(--blk);color:var(--t1);font-family:'Manrope',sans-serif;font-weight:400;overflow-x:hidden;cursor:auto;line-height:1.6;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpolygon points='50,10 85,30 85,70 50,90 15,70 15,30' fill='none' stroke='rgba(255,69,0,0.05)' stroke-width='1'/%3E%3Cpolygon points='50,35 70,47 70,72 50,85 30,72 30,47' fill='rgba(255,69,0,0.03)'/%3E%3C/svg%3E");background-size:100px 100px;background-attachment:fixed;}
+a{text-decoration:none;color:inherit;cursor:auto}
+button{cursor:auto;font-family:'Manrope',sans-serif;border:none;background:none}
 ::selection{background:var(--or);color:var(--w)}
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-track{background:var(--dk)}
@@ -129,10 +129,34 @@ button{cursor:none;font-family:'Manrope',sans-serif;border:none;background:none}
   transform:translate(-50%,-50%);
   transition:width .38s var(--ease),height .38s var(--ease),border-color .3s,opacity .3s;
 }
-body.hovering #cDot{width:14px;height:14px;background:var(--or2)}
-body.hovering #cRing{width:54px;height:54px;border-color:rgba(255,107,53,.8)}
-body.clicking #cDot{width:6px;height:6px;background:var(--w)}
-body.clicking #cRing{width:30px;height:30px}
+body.hovering #cDot{
+  position:fixed;top:0;left:0;width:8px;height:8px;
+  background:var(--or);border-radius:50%;
+  pointer-events:none;z-index:9999;
+  transform:translate(-50%,-50%);
+  transition:width .15s var(--ease),height .15s var(--ease),background .2s;
+}
+body.hovering #cRing{
+  position:fixed;top:0;left:0;width:38px;height:38px;
+  border:1.5px solid rgba(255,69,0,.45);border-radius:50%;
+  pointer-events:none;z-index:9998;
+  transform:translate(-50%,-50%);
+  transition:width .38s var(--ease),height .38s var(--ease),border-color .3s,opacity .3s;
+}
+body.clicking #cDot{
+  position:fixed;top:0;left:0;width:8px;height:8px;
+  background:var(--or);border-radius:50%;
+  pointer-events:none;z-index:9999;
+  transform:translate(-50%,-50%);
+  transition:width .15s var(--ease),height .15s var(--ease),background .2s;
+}
+body.clicking #cRing{
+  position:fixed;top:0;left:0;width:38px;height:38px;
+  border:1.5px solid rgba(255,69,0,.45);border-radius:50%;
+  pointer-events:none;z-index:9998;
+  transform:translate(-50%,-50%);
+  transition:width .38s var(--ease),height .38s var(--ease),border-color .3s,opacity .3s;
+}
 
 /* ══════════════════════════════════════════
    NAV — FIJO CON ACTIVE STATE
@@ -161,7 +185,7 @@ body.clicking #cRing{width:30px;height:30px}
   box-shadow:0 0 8px var(--or);
 }
 
-.logo{display:flex;align-items:center;gap:11px;cursor:none}
+.logo{display:flex;align-items:center;gap:11px;cursor:auto}
 .logo-mark{
   width:34px;height:34px;background:var(--or);border-radius:8px;
   display:grid;place-items:center;flex-shrink:0;
@@ -180,7 +204,7 @@ body.clicking #cRing{width:30px;height:30px}
 .nav-links a{
   font-size:13px;font-weight:500;color:var(--t2);
   padding:7px 14px;border-radius:100px;
-  letter-spacing:.03em;transition:color .25s,background .25s;cursor:none;
+  letter-spacing:.03em;transition:color .25s,background .25s;cursor:auto;
   position:relative;
 }
 .nav-links a:hover{color:var(--t1);background:var(--t4)}
@@ -191,7 +215,7 @@ body.clicking #cRing{width:30px;height:30px}
   display:flex;align-items:center;gap:7px;
   font-size:12.5px;font-weight:600;color:#25D366;
   border:1px solid rgba(37,211,102,.3);border-radius:100px;
-  padding:8px 18px;transition:all .25s;cursor:none;
+  padding:8px 18px;transition:all .25s;cursor:auto;
 }
 .nav-wp:hover{background:rgba(37,211,102,.08);border-color:rgba(37,211,102,.6)}
 .nav-cta{
@@ -199,7 +223,7 @@ body.clicking #cRing{width:30px;height:30px}
   background:var(--or);color:var(--w);
   padding:10px 22px;border-radius:100px;
   font-size:13px;font-weight:700;letter-spacing:.03em;
-  transition:all .25s;cursor:none;
+  transition:all .25s;cursor:auto;
   box-shadow:0 4px 20px var(--or-glow);
 }
 .nav-cta:hover{background:var(--or2);transform:translateY(-1px);box-shadow:0 8px 36px var(--or-glow)}
@@ -308,7 +332,7 @@ body.clicking #cRing{width:30px;height:30px}
   background:var(--or);color:var(--w);
   padding:16px 36px;border-radius:100px;
   font-weight:700;font-size:14px;letter-spacing:.03em;
-  transition:all .3s var(--ease);cursor:none;
+  transition:all .3s var(--ease);cursor:auto;
   box-shadow:0 8px 40px var(--or-glow);
 }
 .btn-orange:hover{background:var(--or2);transform:translateY(-2px);box-shadow:0 16px 56px rgba(255,69,0,.3)}
@@ -317,7 +341,7 @@ body.clicking #cRing{width:30px;height:30px}
   border:1.5px solid var(--bd2);color:var(--t2);
   padding:15px 28px;border-radius:100px;
   font-weight:600;font-size:14px;
-  transition:all .3s;cursor:none;
+  transition:all .3s;cursor:auto;
 }
 .btn-border:hover{border-color:var(--bd3);color:var(--t1);background:rgba(255,255,255,.04)}
 
@@ -330,7 +354,7 @@ body.clicking #cRing{width:30px;height:30px}
 .stat-card{
   background:var(--dk);border:1px solid var(--bd);border-radius:18px;
   padding:32px 26px;position:relative;overflow:hidden;
-  transition:border-color .3s,transform .35s var(--ease);cursor:none;
+  transition:border-color .3s,transform .35s var(--ease);cursor:auto;
 }
 .stat-card:hover{border-color:var(--bd2);transform:translateY(-4px)}
 .stat-card.big{grid-column:1/-1}
@@ -415,7 +439,7 @@ body.clicking #cRing{width:30px;height:30px}
 
 .srv{
   background:var(--dk);padding:48px 40px;
-  position:relative;overflow:hidden;cursor:none;
+  position:relative;overflow:hidden;cursor:auto;
   transition:background .4s;
 }
 .srv:hover{background:var(--sur)}
@@ -454,7 +478,7 @@ body.clicking #cRing{width:30px;height:30px}
   font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
   color:var(--or2);border-bottom:1px solid rgba(255,107,53,.3);
   padding-bottom:2px;width:fit-content;
-  transition:gap .25s,border-color .25s;cursor:none;
+  transition:gap .25s,border-color .25s;cursor:auto;
   position:relative;z-index:1;background:none;
 }
 .srv-expand-btn:hover{gap:12px;border-color:var(--or)}
@@ -521,7 +545,7 @@ body.clicking #cRing{width:30px;height:30px}
 .plan{
   background:var(--dk);border:1px solid var(--bd);border-radius:20px;
   padding:44px 36px;position:relative;overflow:hidden;
-  transition:border-color .35s,transform .35s var(--ease),box-shadow .35s;cursor:none;
+  transition:border-color .35s,transform .35s var(--ease),box-shadow .35s;cursor:auto;
 }
 .plan:hover{border-color:var(--bd2);transform:translateY(-5px);box-shadow:0 24px 60px rgba(0,0,0,.35)}
 .plan.feat{
@@ -568,7 +592,7 @@ body.clicking #cRing{width:30px;height:30px}
 .plan-btn{
   display:block;text-align:center;padding:15px;border-radius:100px;
   font-weight:700;font-size:13.5px;letter-spacing:.03em;
-  transition:all .3s var(--ease);cursor:none;
+  transition:all .3s var(--ease);cursor:auto;
 }
 .pb-out{border:1.5px solid var(--bd2);color:var(--t2)}
 .pb-out:hover{border-color:var(--bd3);color:var(--t1);background:rgba(255,255,255,.05)}
@@ -642,7 +666,7 @@ body.clicking #cRing{width:30px;height:30px}
 .persona{
   background:var(--dk);border:1px solid var(--bd);border-radius:20px;
   padding:44px;position:relative;overflow:hidden;
-  transition:border-color .3s;cursor:none;
+  transition:border-color .3s;cursor:auto;
 }
 .persona:hover{border-color:var(--bd2)}
 .persona::after{
@@ -709,7 +733,7 @@ body.clicking #cRing{width:30px;height:30px}
 .test-card{
   background:var(--dk);border:1px solid var(--bd);border-radius:18px;
   padding:36px 32px;
-  transition:border-color .3s,transform .35s var(--ease);cursor:none;
+  transition:border-color .3s,transform .35s var(--ease);cursor:auto;
 }
 .test-card:hover{border-color:var(--bd2);transform:translateY(-4px)}
 .test-stars{display:flex;gap:3px;margin-bottom:20px}
@@ -734,7 +758,7 @@ body.clicking #cRing{width:30px;height:30px}
 .faq-item{border-bottom:1px solid var(--bd)}
 .faq-q{
   display:flex;justify-content:space-between;align-items:center;
-  padding:26px 0;cursor:none;gap:20px;
+  padding:26px 0;cursor:auto;gap:20px;
 }
 .faq-q-text{font-size:16px;font-weight:600;color:var(--t1);transition:color .25s;line-height:1.4}
 .faq-item:hover .faq-q-text{color:var(--or2)}
@@ -803,7 +827,7 @@ body.clicking #cRing{width:30px;height:30px}
   background:var(--or);color:var(--w);border:none;
   border-radius:100px;padding:16px 28px;
   font-family:'Manrope',sans-serif;font-weight:700;font-size:14px;
-  letter-spacing:.03em;transition:all .3s;cursor:none;white-space:nowrap;
+  letter-spacing:.03em;transition:all .3s;cursor:auto;white-space:nowrap;
   box-shadow:0 6px 32px var(--or-glow);
 }
 .cta-btn:hover{background:var(--or2);transform:translateY(-1px);box-shadow:0 14px 48px rgba(255,69,0,.3)}
@@ -817,7 +841,7 @@ body.clicking #cRing{width:30px;height:30px}
   display:inline-flex;align-items:center;gap:10px;
   border:1.5px solid var(--bd2);border-radius:100px;
   padding:14px 28px;font-size:14px;font-weight:600;
-  color:var(--t2);transition:all .3s;cursor:none;
+  color:var(--t2);transition:all .3s;cursor:auto;
 }
 .cbtn:hover{border-color:var(--bd3);color:var(--t1);background:rgba(255,255,255,.04)}
 .cbtn.wa{border-color:rgba(37,211,102,.3);color:#25D366}
@@ -843,7 +867,7 @@ body.clicking #cRing{width:30px;height:30px}
 .cc-icon{font-size:22px}
 .cc-label{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--t3)}
 .cc-value{font-size:13.5px;font-weight:600;color:var(--t1)}
-.cc-item a{color:inherit;cursor:none}
+.cc-item a{color:inherit;cursor:auto}
 
 /* ══════════════════════════════════════════
    FOOTER
@@ -864,7 +888,7 @@ footer{
 .fb p{font-size:13px;color:var(--t3);line-height:1.75}
 .fc-title{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--t4);margin-bottom:18px}
 .fc-links{list-style:none;display:flex;flex-direction:column;gap:10px}
-.fc-links a{font-size:13.5px;color:var(--t2);transition:color .25s;cursor:none}
+.fc-links a{font-size:13.5px;color:var(--t2);transition:color .25s;cursor:auto}
 .fc-links a:hover{color:var(--t1)}
 .footer-bottom{
   display:flex;justify-content:space-between;align-items:center;
@@ -884,7 +908,7 @@ footer{
   display:grid;place-items:center;font-size:18px;
   box-shadow:0 6px 24px var(--or-glow);
   opacity:0;transform:translateY(12px);pointer-events:none;
-  transition:opacity .35s,transform .35s var(--ease);cursor:none;
+  transition:opacity .35s,transform .35s var(--ease);cursor:auto;
   border:none;
 }
 #btt.show{opacity:1;transform:translateY(0);pointer-events:auto}
@@ -981,9 +1005,9 @@ footer{
 @keyframes annGrad{0%{background-position:0% 50%}100%{background-position:300% 50%}}
 .ann-inner{display:flex;align-items:center;gap:12px;font-size:12.5px;font-weight:600;color:var(--w);letter-spacing:.03em}
 .ann-dot{width:7px;height:7px;background:var(--w);border-radius:50%;animation:blink 1.8s infinite;flex-shrink:0}
-.ann-link{border-bottom:1px solid rgba(255,255,255,.6);color:var(--w);font-weight:700;cursor:none;transition:border-color .2s}
+.ann-link{border-bottom:1px solid rgba(255,255,255,.6);color:var(--w);font-weight:700;cursor:auto;transition:border-color .2s}
 .ann-link:hover{border-color:var(--w)}
-.ann-x{position:absolute;right:16px;background:none;border:none;color:rgba(255,255,255,.7);font-size:18px;padding:6px 10px;cursor:none;transition:color .2s;line-height:1}
+.ann-x{position:absolute;right:16px;background:none;border:none;color:rgba(255,255,255,.7);font-size:18px;padding:6px 10px;cursor:auto;transition:color .2s;line-height:1}
 .ann-x:hover{color:var(--w)}
 
 /* ══ FLOATING CHAT BUBBLE ══ */
@@ -994,7 +1018,7 @@ footer{
   background:#25D366;border:none;
   display:grid;place-items:center;
   box-shadow:0 6px 28px rgba(37,211,102,.4);
-  cursor:none;transition:transform .3s,box-shadow .3s;
+  cursor:auto;transition:transform .3s,box-shadow .3s;
   position:relative;
 }
 .chat-btn:hover{transform:scale(1.1);box-shadow:0 10px 40px rgba(37,211,102,.55)}
@@ -1080,13 +1104,13 @@ footer{
   background:var(--or);color:var(--w);border:none;
   padding:16px;border-radius:100px;
   font-family:'Manrope',sans-serif;font-weight:700;font-size:15px;
-  cursor:none;transition:all .3s;
+  cursor:auto;transition:all .3s;
   box-shadow:0 6px 32px var(--or-glow);
 }
 .exit-cta:hover{background:var(--or2);transform:translateY(-1px)}
-.exit-skip{display:block;margin-top:14px;font-size:13px;color:var(--t3);cursor:none;transition:color .25s}
+.exit-skip{display:block;margin-top:14px;font-size:13px;color:var(--t3);cursor:auto;transition:color .25s}
 .exit-skip:hover{color:var(--t2)}
-.exit-close{position:absolute;top:18px;right:20px;background:none;border:none;color:var(--t3);font-size:22px;cursor:none;padding:4px 8px;transition:color .25s;line-height:1}
+.exit-close{position:absolute;top:18px;right:20px;background:none;border:none;color:var(--t3);font-size:22px;cursor:auto;padding:4px 8px;transition:color .25s;line-height:1}
 .exit-close:hover{color:var(--t1)}
 
 /* ══ TOAST NOTIFICATIONS ══ */
@@ -1124,7 +1148,7 @@ footer{
 .urg-slots{font-size:12px;color:var(--or2);font-weight:700;padding:6px 14px;background:var(--or-dim);border-radius:100px;border:1px solid rgba(255,69,0,.25)}
 
 /* ══ SVG ICON LINKS ══ */
-.icon-link{display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--t2);transition:color .25s;cursor:none}
+.icon-link{display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--t2);transition:color .25s;cursor:auto}
 .icon-link:hover{color:var(--t1)}
 .icon-link svg{width:16px;height:16px;flex-shrink:0;opacity:.6;transition:opacity .25s}
 .icon-link:hover svg{opacity:1}
@@ -2011,10 +2035,10 @@ footer{
   </div>
   <div class="footer-bottom" style="flex-direction:column;gap:16px;text-align:center">
     <div style="display:flex;gap:24px;flex-wrap:wrap;justify-content:center">
-      <a href="javascript:void(0)" onclick="openLegal('terms')" style="font-size:11.5px;color:var(--t3);transition:color .25s;cursor:none" onmouseover="this.style.color='var(--t2)'" onmouseout="this.style.color='var(--t3)'">Términos y Condiciones</a>
-      <a href="javascript:void(0)" onclick="openLegal('privacy')" style="font-size:11.5px;color:var(--t3);transition:color .25s;cursor:none" onmouseover="this.style.color='var(--t2)'" onmouseout="this.style.color='var(--t3)'">Política de Privacidad</a>
-      <a href="javascript:void(0)" onclick="openLegal('cookies')" style="font-size:11.5px;color:var(--t3);transition:color .25s;cursor:none" onmouseover="this.style.color='var(--t2)'" onmouseout="this.style.color='var(--t3)'">Política de Cookies</a>
-      <a href="javascript:void(0)" onclick="openLegal('legal')" style="font-size:11.5px;color:var(--t3);transition:color .25s;cursor:none" onmouseover="this.style.color='var(--t2)'" onmouseout="this.style.color='var(--t3)'">Aviso Legal</a>
+      <a href="javascript:void(0)" onclick="openLegal('terms')" style="font-size:11.5px;color:var(--t3);transition:color .25s;cursor:auto" onmouseover="this.style.color='var(--t2)'" onmouseout="this.style.color='var(--t3)'">Términos y Condiciones</a>
+      <a href="javascript:void(0)" onclick="openLegal('privacy')" style="font-size:11.5px;color:var(--t3);transition:color .25s;cursor:auto" onmouseover="this.style.color='var(--t2)'" onmouseout="this.style.color='var(--t3)'">Política de Privacidad</a>
+      <a href="javascript:void(0)" onclick="openLegal('cookies')" style="font-size:11.5px;color:var(--t3);transition:color .25s;cursor:auto" onmouseover="this.style.color='var(--t2)'" onmouseout="this.style.color='var(--t3)'">Política de Cookies</a>
+      <a href="javascript:void(0)" onclick="openLegal('legal')" style="font-size:11.5px;color:var(--t3);transition:color .25s;cursor:auto" onmouseover="this.style.color='var(--t2)'" onmouseout="this.style.color='var(--t3)'">Aviso Legal</a>
 </div>
     <div style="display:flex;justify-content:space-between;width:100%;align-items:center;flex-wrap:wrap;gap:12px">
       <span class="fc-copy">© 2025 Nexora. Todos los derechos reservados. · Chivilcoy, Buenos Aires, Argentina</span>
@@ -2383,6 +2407,19 @@ document.getElementById('legalModal').addEventListener('click', (e) => {
   if (e.target.id === 'legalModal') closeLegal();
 });
 
+</script>
+<script>
+// ── CURSOR MOVEMENT ──
+const cDot = document.getElementById('cDot');
+const cRing = document.getElementById('cRing');
+document.addEventListener('mousemove', e => {
+  cDot.style.left = e.clientX + 'px';
+  cDot.style.top = e.clientY + 'px';
+  cRing.style.left = e.clientX + 'px';
+  cRing.style.top = e.clientY + 'px';
+});
+document.addEventListener('mousedown', () => document.body.classList.add('clicking'));
+document.addEventListener('mouseup', () => document.body.classList.remove('clicking'));
 </script>
 </body>
 </html>
